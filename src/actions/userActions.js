@@ -13,8 +13,8 @@ export function signUpUser(user){
     } 
 } 
 
-export function signInUser(){ 
-    var data = {email: this.props.email, password: this.props.password};
+export function signInUser(user){ 
+    var data = {email: user.email, password: user.password};
     return function(dispatch){ 
         dispatch({type: 'SIGN_IN_USER'})
         return fetch('http://localhost:3000/users/sign_in', {
