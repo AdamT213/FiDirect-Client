@@ -26,7 +26,7 @@ export class RecurringPaymentInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const account = Object.assign({}, this.state);
+    const payment = Object.assign({}, this.state);
     this.props.addRecurringPayment(payment);
     this.setState({
       source: '',
