@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addBankAccount } from '../actions/bankActions';
-import {RecurringPaymentInput} from './RecurringPaymentInput'
 
 export class BankInput extends Component {
 
@@ -10,14 +9,6 @@ export class BankInput extends Component {
     this.state = {
       name: '',
       balance: '',
-      recurring_payments: {
-        source: '',
-        status: null,
-        pay_date: null,
-        pay_amount: null,
-        duration: null,
-        payment_frequency: null,
-      }
     }
   }
 
@@ -35,14 +26,6 @@ export class BankInput extends Component {
     this.setState({
       name: '',
       balance: '',
-      recurring_payments: {
-        source: '',
-        status: null,
-        pay_date: null,
-        pay_amount: null,
-        duration: null,
-        payment_frequency: null,
-      }
     });
   }
 
@@ -77,7 +60,6 @@ export class BankInput extends Component {
                       />
                     </div>
                   </div>
-                  <RecurringPaymentInput addRecurringPayment= {this.props.addRecurringPayment} />
                   <div className="form-group">
                     <div className="col-md-6 col-md-offset-4">
                       <button type="submit" className="btn btn-default">Sign Up</button>
