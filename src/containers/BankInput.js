@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signInUser } from '../actions/userActions';
+import { addBankAccount } from '../actions/bankActions';
 
-export class UserSignInForm extends Component {
+export class BankInput extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      email: '',
-      password: '',
+      name: '',
+      balance: '',
     }
   }
 
@@ -21,11 +21,11 @@ export class UserSignInForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.signInUser(user);
+    const account = Object.assign({}, this.state);
+    this.props.addBankAccount(account);
     this.setState({
-      email: '',
-      password: ''
+      name: '',
+      balance: '',
     });
   }
 
@@ -38,24 +38,24 @@ export class UserSignInForm extends Component {
               <div className="panel-body">
                 <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
                   <div className="form-group">
-                    <label htmlFor="email" className="col-md-4 control-label">Email</label>
+                    <label htmlFor="name" className="col-md-4 control-label">Account Name</label>
                     <div className="col-md-5">
                       <input
                         className="form-control"
-                        name="email"
-                        value={this.state.email}
+                        name="name"
+                        value={this.state.name}
                         onChange={this.handleOnChange}
                       />
                     </div>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="password" className="col-md-4 control-label">Password</label>
+                    <label htmlFor="balance" className="col-md-4 control-label">Balance</label>
                     <div className="col-md-5">
                       <input
                         className="form-control"
                         type="text"
-                        name="password"
-                        value={this.state.password}
+                        name="balance"
+                        value={this.state.balance}
                         onChange={this.handleOnChange}
                       />
                     </div>
@@ -75,4 +75,4 @@ export class UserSignInForm extends Component {
   }
 }
 
-export default connect(null, { signInUser })(UserSignInForm());
+export default connect(null, { addBankAccount })(BankInput());

@@ -8,7 +8,7 @@ export class UserSignUpForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      email: '', 
+      email: '',
       password: '',
     }
   }
@@ -25,7 +25,7 @@ export class UserSignUpForm extends Component {
     const user = Object.assign({}, this.state, { id: uuid() });
     this.props.signUpUser(user);
     this.setState({
-      email: '', 
+      email: '',
       password: ''
     });
   }
@@ -39,9 +39,9 @@ export class UserSignUpForm extends Component {
               <div className="panel-body">
                 <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
                   <div className="form-group">
-                    <label htmlFor="content" className="col-md-4 control-label">Email</label>
+                    <label htmlFor="email" className="col-md-4 control-label">Email</label>
                     <div className="col-md-5">
-                      <input 
+                      <input
                         className="form-control"
                         name="email"
                         value={this.state.email}
@@ -50,14 +50,14 @@ export class UserSignUpForm extends Component {
                     </div>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="author" className="col-md-4 control-label">Password</label>
+                    <label htmlFor="password" className="col-md-4 control-label">Password</label>
                     <div className="col-md-5">
-                      <input 
+                      <input
                         className="form-control"
                         type="text"
                         name="password"
                         value={this.state.password}
-                        onChange={this.handleOnChange} 
+                        onChange={this.handleOnChange}
                       />
                     </div>
                   </div>
