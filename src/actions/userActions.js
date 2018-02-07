@@ -6,6 +6,9 @@ export function signUpUser(user){
         dispatch({type: 'SIGN_UP_USER'})
         return fetch('/api/users/sign_up', {
         method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
         body: JSON.stringify(data),
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
@@ -19,6 +22,9 @@ export function signInUser(user){
         dispatch({type: 'SIGN_IN_USER'})
         return fetch('/api/users/sign_in', {
         method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
         body: JSON.stringify(data),
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
