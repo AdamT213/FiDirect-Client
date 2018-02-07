@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addAsset } from '../actions/assetActions';
 
-export class BankInput extends Component {
+export class AssetInput extends Component {
 
   constructor(props) {
     super(props)
