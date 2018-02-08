@@ -7,7 +7,5 @@ export function paymentsReducer(state = {payment: {}}, action) {
       duration: action.duration }})
     default:
       return state
-    case 'UPDATE_PAY_DATE':
-      return state: {pay_date: this.state.pay_date + payment_frequency}
   }
 }
