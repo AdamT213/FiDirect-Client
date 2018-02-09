@@ -62,7 +62,7 @@ export class UserSignInForm extends Component {
                   </div>
                   <div className="form-group">
                     <div className="col-md-6 col-md-offset-4">
-                      <button type="submit" className="btn btn-default">Sign Up</button>
+                      <button type="submit" className="btn btn-default">Sign In</button>
                     </div>
                   </div>
                 </form>
@@ -75,4 +75,4 @@ export class UserSignInForm extends Component {
   }
 }
 
-export default connect(null, { signInUser })(UserSignInForm());
+export default connect(null, { signInUser })(UserSignInForm);

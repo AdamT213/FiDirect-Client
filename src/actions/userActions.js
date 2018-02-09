@@ -4,7 +4,7 @@ export function signUpUser(user){
     var data = {email: user.email, password: user.password};
     return function(dispatch){
         dispatch({type: 'SIGN_UP_USER'})
-        return fetch('/api/users/', {
+        return fetch('/api/users', {
         method: 'POST', 
         headers: new Headers({
           'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export function signInUser(user){
           'Content-Type': 'application/json'
         }),
         body: JSON.stringify(data),
-        }).then(res => res.json())
+        }).then(res => console.log(res))
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
     }
