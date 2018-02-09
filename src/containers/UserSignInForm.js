@@ -53,7 +53,7 @@ export class UserSignInForm extends Component {
                     <div className="col-md-5">
                       <input
                         className="form-control"
-                        type="text"
+                        type="password"
                         name="password"
                         value={this.state.password}
                         onChange={this.handleOnChange}
