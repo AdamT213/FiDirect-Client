@@ -8,9 +8,9 @@ export function addBankAccount(account){
         method: 'POST',
         headers: new Headers({
           'Content-Type': 'application/json'
-        })
+        }),
         body: JSON.stringify(data),
-        }).then(res => res.json())
+        }).then(res => console.log(res))
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
     }
