@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addLoan } from '../actions/loanActions';
 
-export class BankInput extends Component {
+export class LoanInput extends Component {
 
   constructor(props) {
     super(props)
@@ -89,4 +89,4 @@ export class BankInput extends Component {
   }
 }
 
-export default connect(null, { addLoan })(LoanInput());
+export default connect(null, { addLoan })(LoanInput);

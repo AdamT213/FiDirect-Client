@@ -89,4 +89,4 @@ export class CreditCardInput extends Component {
   }
 }
 
-export default connect(null, { addCreditCard })(CreditCardInput());
+export default connect(null, { addCreditCard })(CreditCardInput);

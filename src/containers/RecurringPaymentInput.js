@@ -72,7 +72,7 @@ export class RecurringPaymentInput extends Component {
                   </div>
                   <div className="form-group">
                     <label htmlFor="payment_frequency" className="col-md-4 control-label">Payment Frequency(Days)</label>
-                    <div className="col-md-5"
+                    <div className="col-md-5">
                       <input
                         className="form-control"
                         type="text"
@@ -133,4 +133,4 @@ export class RecurringPaymentInput extends Component {
   }
 }
 
-export default connect(null, { addRecurringPayment })(RecurringPaymentInput());
+export default connect(null, { addRecurringPayment })(RecurringPaymentInput);
