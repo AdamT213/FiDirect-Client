@@ -19,7 +19,7 @@ export function signUpUser(user){
 export function signInUser(user){
     var data = {email: user.email, password: user.password};
     return function(dispatch){
-        dispatch({type: 'SIGN_IN_USER'})
+        dispatch({type: 'SIGN_IN_USER', payload: user})
         return fetch('/api/users/sign_in', {
         method: 'POST',
         headers: new Headers({
