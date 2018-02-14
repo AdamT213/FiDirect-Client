@@ -6,7 +6,6 @@ import NavBar from './containers/NavBar';
 import NetWorth from './containers/NetWorth'
 import UserSignUpForm from './inputcontainers/UserSignUpForm' 
 import UserSignInForm from './inputcontainers/UserSignInForm' 
-import BankInput from './inputcontainers/BankInput' 
 import CreditCardInput from './inputcontainers/CreditCardInput'
 import InvestmentInput from './inputcontainers/InvestmentInput'
 import LoanInput from './inputcontainers/LoanInput' 
