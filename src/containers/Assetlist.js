@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
-import Assets from './Assets' 
-import Asset from '../presentational/Asset'
+import Asset from '../presentational/Asset';
 
 export class Assetlist extends Component {
 
