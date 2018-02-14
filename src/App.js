@@ -6,18 +6,10 @@ import NavBar from './containers/NavBar';
 import NetWorth from './containers/NetWorth'
 import UserSignUpForm from './inputcontainers/UserSignUpForm' 
 import UserSignInForm from './inputcontainers/UserSignInForm' 
-import InvestmentInput from './inputcontainers/InvestmentInput'
-import LoanInput from './inputcontainers/LoanInput' 
-import RecurringPaymentInput from './inputcontainers/RecurringPaymentInput' 
-import Assets from './containers/Assets'
 import Assetlist from './containers/Assetlist'
-import Banks from './containers/Banks'
 import Bankslist from './containers/Bankslist'
-import CreditCards from './containers/CreditCards'
 import CreditCardslist from './containers/CreditCardslist'
-import Investments from './containers/Investments'
 import Investmentslist from './containers/Investmentslist'
-import Loans from './containers/Loans'
 import Loanslist from './containers/Loanslist'
 
 class App extends Component {
