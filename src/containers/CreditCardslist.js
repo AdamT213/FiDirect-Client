@@ -1,5 +1,8 @@
 import React, { Component } from 'react'; 
+import { Route, Switch } from 'react-router-dom';
 import CreditCard from '../presentational/CreditCard';
+import CreditCardInput from '../inputcontainers/CreditCardInput' 
+import CreditCards from './CreditCards'
 
 export class CreditCardslist extends Component {
 
@@ -10,9 +13,18 @@ export class CreditCardslist extends Component {
     });
 
     return (
-        <ul> 
-         {cards} 
-        </ul>
+        <div>
+          <Switch>
+            <Route path={`${this.props.match.url}/new`} component={CreditCardInput} />
+            <Route path={`${this.props.match.url}/getBanks`} component={CreditCards}/>
+            <Route exact path={this.props.match.url} render={() => (
+              <h3>Here are all of your Credit Cards</h3>
+            )}/> 
+          </Switch>
+          <ul> 
+            {cards} 
+          </ul> 
+        </div>
     )
   }
 };
