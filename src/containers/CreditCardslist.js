@@ -16,7 +16,7 @@ export class CreditCardslist extends Component {
         <div>
           <Switch>
             <Route path={`${this.props.match.url}/new`} component={CreditCardInput} />
-            <Route path={`${this.props.match.url}/getBanks`} component={CreditCards}/>
+            <Route path={`${this.props.match.url}/getCards`} component={CreditCards}/>
             <Route exact path={this.props.match.url} render={() => (
               <h3>Here are all of your Credit Cards</h3>
             )}/> 
