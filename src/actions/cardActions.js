@@ -16,3 +16,15 @@ export function addCreditCard(account){
         .then(response => console.log('Success:', response));
     }
 }
+
+export function getCards(){ 
+   return function(dispatch){
+    dispatch({type: 'LOADING_CARDS'})
+    return fetch('https://ee55715a523f4af8bae9f5467daf644d.vfs.cloud9.us-east-2.amazonaws.com:8081/api/credit_cards')
+      .then(res => {
+        return res.json()
+      }).then(responseJson => {
+        dispatch({type: 'GET_CARDS', payload: responseJson})
+    })
+  }
+}
