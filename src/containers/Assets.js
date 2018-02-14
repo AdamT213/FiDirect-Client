@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getAssets } from '../actions/assetActions';
 
 
-export class Quotes extends Component { 
+export class Assets extends Component { 
     constructor(props) {
     super(props) 
     }
