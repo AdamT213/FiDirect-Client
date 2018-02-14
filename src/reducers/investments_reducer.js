@@ -1,8 +1,12 @@
-export function assetsReducer(state = {investment: {}}, action) {
+export function investmentsReducer(state = {loading: false, investment: {}, investments: []}, action) {
   switch (action.type) {
 
     case 'ADD_INVESTMENT':
-      return Object.assign({}, state, {investment: {name: action.name, value: action.value }})
+      return Object.assign({}, state, {investment: {name: action.name, value: action.value }}) 
+    case 'LOADING_INVESTMENTS':
+      return Object.assign({}, state, {loading: true});
+    case 'GET_INVESTMENTS':
+      return {loading: false, investments: action.payload.filter((investment => investment.id === user_id))};
     default:
       return state
   }
