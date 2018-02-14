@@ -10,7 +10,7 @@ export class Quotes extends Component {
     
     handleOnClick = event => {
         event.preventDefault();
-        this.props.getAssets
+        this.props.getAssets();
     }
 
   render() {
