@@ -25,7 +25,7 @@ export class AssetInput extends Component {
     this.props.addAsset(asset);
     this.setState({
       name: '',
-      value '',
+      value: '',
     });
   }
 
@@ -75,4 +75,4 @@ export class AssetInput extends Component {
   }
 }
 
-export default connect(null, { addLoan })(LoanInput());
+export default connect(null, { addAsset })(AssetInput());
