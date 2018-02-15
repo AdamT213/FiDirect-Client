@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom'; 
 import { addCreditCard } from '../actions/cardActions';
+import RecurringPaymentInput from './RecurringPaymentInput'
 
 export class CreditCardInput extends Component {
 
@@ -80,6 +82,9 @@ export class CreditCardInput extends Component {
                     </div>
                   </div>
                 </form>
+                <Router> 
+                  <Route exact path="/recurring_payments/new" component={RecurringPaymentInput} /> 
+                </Router>
               </div>
             </div>
           </div>
