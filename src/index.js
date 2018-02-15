@@ -9,7 +9,7 @@ import rootReducer from './reducers';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker'; 
 
-const store = createStore(
+export const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(thunk),
