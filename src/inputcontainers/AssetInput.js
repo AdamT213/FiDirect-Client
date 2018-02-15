@@ -75,4 +75,4 @@ export class AssetInput extends Component {
   }
 }
 
-export default connect(null, { addAsset })(AssetInput());
+export default connect(null, { addAsset })(AssetInput);

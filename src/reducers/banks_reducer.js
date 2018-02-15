@@ -6,7 +6,7 @@ export function banksReducer(state = {loading: false, account: {}, accounts: []}
     case 'LOADING_ BANKS':
       return Object.assign({}, state, {loading: true});
      case 'GET_BANKS':
-      return {loading: false, accounts: action.payload.filter((account => account.id === user_id))};
+      return {loading: false, accounts: action.payload.filter((account => account.id === state.user_id))};
     default:
       return state;
   }

@@ -6,11 +6,11 @@ import NavBar from './containers/NavBar';
 import NetWorth from './containers/NetWorth'
 import UserSignUpForm from './inputcontainers/UserSignUpForm' 
 import UserSignInForm from './inputcontainers/UserSignInForm' 
-import Assetlist from './containers/Assetlist'
-import Bankslist from './containers/Bankslist'
-import CreditCardslist from './containers/CreditCardslist'
-import Investmentslist from './containers/Investmentslist'
-import Loanslist from './containers/Loanslist'
+import {Assetlist} from './containers/Assetlist'
+import {Bankslist} from './containers/Bankslist'
+import {CreditCardslist} from './containers/CreditCardslist'
+import {Investmentslist} from './containers/Investmentslist'
+import {Loanslist} from './containers/Loanslist'
 
 class App extends Component {
   render() { 

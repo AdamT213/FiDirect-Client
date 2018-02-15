@@ -7,7 +7,7 @@ export function loansReducer(state = {loading: false, loan: {}, loans: []}, acti
     case 'LOADING_LOANS':
       return Object.assign({}, state, {loading: true});
     case 'GET_LOANS':
-      return {loading: false, loans: action.payload.filter((loan => loan.id === user_id))};
+      return {loading: false, loans: action.payload.filter((loan => loan.id === state.user_id))};
     default:
       return state
   }

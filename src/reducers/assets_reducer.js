@@ -6,7 +6,7 @@ export function assetsReducer(state = {loading: false, asset: {}, assets: []}, a
      case 'LOADING_ ASSETS':
       return Object.assign({}, state, {loading: true});
      case 'GET_ASSETS':
-      return {loading: false, assets: action.payload.filter((asset => asset.id === user_id))};
+      return {loading: false, assets: action.payload.filter((asset => asset.id === state.user_id))};
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import calculateNetWorth from '../networthActions'; 
+import { calculateNetWorth } from '../actions/networthActions'; 
 
 class NetWorth extends Component {
 
