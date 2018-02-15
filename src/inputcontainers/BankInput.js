@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom'; 
 import { addBankAccount } from '../actions/bankActions';
+import RecurringPaymentInput from './RecurringPaymentInput'
 
 export class BankInput extends Component {
 
@@ -65,7 +67,10 @@ export class BankInput extends Component {
                       <button type="submit" className="btn btn-default">Add Bank</button>
                     </div>
                   </div>
-                </form>
+                </form> 
+                <Router> 
+                  <Route exact path="/recurring_payments/new" component={RecurringPaymentInput} /> 
+                </Router>
               </div>
             </div>
           </div>
