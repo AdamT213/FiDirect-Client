@@ -4,10 +4,11 @@ import { banksReducer } from "./banks_reducer"
 import { paymentsReducer} from "./payments_reducer"
 import { cardsReducer} from "./cards_reducer"
 import { loansReducer} from "./loans_reducer"
-import { assetsReducer } from "./assets_reducer"
+import { assetsReducer } from "./assets_reducer" 
+import { networthReducer } from "./networth_reducer"
 
 const rootReducer = combineReducers({
- usersReducer, banksReducer, paymentsReducer, cardsReducer, loansReducer, assetsReducer,
+ usersReducer, banksReducer, paymentsReducer, cardsReducer, loansReducer, assetsReducer, networthReducer,
 });
 
 export default rootReducer;
