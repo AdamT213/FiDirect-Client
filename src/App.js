@@ -17,7 +17,6 @@ import {Loanslist} from './containers/Loanslist'
 
 class App extends Component {
   render() { 
-    debugger;
     if (this.props.user_id === null) { 
       return (
         <div className="App">

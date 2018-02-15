@@ -3,6 +3,7 @@ export function networthReducer(state = {networth: 0}, action) {
 
     case 'CALCULATE_NET_WORTH': 
         let assetsvalue = 0; 
+        debugger;
         state.assets.map((asset) => assetsvalue += asset.value)
         let banksbalance = 0; 
         state.banks.map((bank) => banksbalance += bank.balance)
