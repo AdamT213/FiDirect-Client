@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';  
-import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';  
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from './actions/userActions.js'
 import NavBar from './containers/NavBar'; 
 import NetWorth from './containers/NetWorth'
 import UserSignUpForm from './inputcontainers/UserSignUpForm' 
@@ -14,7 +17,8 @@ import {Loanslist} from './containers/Loanslist'
 
 class App extends Component {
   render() { 
-    if (this.state.user_id === null) { 
+    debugger;
+    if (this.props.user_id === null) { 
       return (
         <div className="App">
           <header className="App-header">
@@ -48,4 +52,12 @@ class App extends Component {
  } 
 }
 
-export default App;
+function mapDispatchToProps(dispatch){
+  return {actions: bindActionCreators(actions, dispatch)}
+}
+ 
+function mapStateToProps(state){
+  return {user_id: state.user_id}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
