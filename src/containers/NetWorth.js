@@ -11,7 +11,7 @@ class NetWorth extends Component {
   render() {
     return (
       <div>
-        <h2>Your current net worth is: {this.props.calculateNetWorth()}</h2>
+        <h2>Your current net worth is ${this.props.calculateNetWorth()}</h2>
       </div>
     )
   }
