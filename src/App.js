@@ -17,7 +17,8 @@ import {Loanslist} from './containers/Loanslist'
 
 class App extends Component {
   render() { 
-    if (this.props.user_id === null) { 
+    debugger;
+    if (this.props.user_id === undefined) { 
       return (
         <div className="App">
           <header className="App-header">
