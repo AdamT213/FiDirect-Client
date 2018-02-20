@@ -1,14 +1,15 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom';
-import Bank from '../presentational/Bank'; 
-import BankInput from '../inputcontainers/BankInput' 
+import Bank from '../presentational/Bank';
+import BankInput from '../inputcontainers/BankInput'
 import Banks from './Banks'
 
-export class Bankslist extends Component {
+class Bankslist extends Component {
 
   render() {
 
-    const banks = this.props.store.getState().banks.map((account, index) => {
+    const banks = this.props.banks.map((account, index) => {
       return <Bank name={account.name} balance= {account.balance} payments= {account.Payments} key={index} />
     });
 
@@ -18,13 +19,21 @@ export class Bankslist extends Component {
             <Route path={`${this.props.match.url}/new`} component={BankInput} />
             <Route path={`${this.props.match.url}/getBanks`} component={Banks}/>
             <Route exact path={this.props.match.url} render={() => (
+              <div>
               <h3>Here are all of your Bank Accounts</h3>
-            )}/> 
+              <ul>
+                {banks}
+              </ul>
+              </div>
+            )}/>
           </Switch>
-          <ul> 
-            {banks} 
-          </ul> 
         </div>
     )
   }
 };
+
+function mapStateToProps(state){
+  return {banks: state.banksReducer.banks}
+}
+
+export default connect(mapStateToProps)(Bankslist);
