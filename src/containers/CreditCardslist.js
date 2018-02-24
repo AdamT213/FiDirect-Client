@@ -21,7 +21,7 @@ class CreditCardslist extends Component {
           <li><Link to={`${this.props.match.url}/new`}>
               Add a Credit Card
             </Link></li>
-            <li><Link to={`${this.props.match.url}/getAssets`}>
+            <li><Link to={`${this.props.match.url}/getCards`}>
              View Your Credit Card Info
             </Link></li>
           </ul>
