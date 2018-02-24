@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import Loan from '../presentational/Loan';
 import LoanInput from '../inputcontainers/LoanInput'
 import Loans from './Loans'
@@ -15,6 +15,14 @@ class Loanslist extends Component {
 
     return (
         <div>
+        <ul>
+          <li><Link to={`${this.props.match.url}/new`}>
+              Add a Loan
+            </Link></li>
+            <li><Link to={`${this.props.match.url}/getInvestments`}>
+             View Your Loan Info
+            </Link></li>
+          </ul>
           <Switch>
             <Route path={`${this.props.match.url}/new`} component={LoanInput} />
             <Route path={`${this.props.match.url}/getInvestments`} component={Loans}/>
