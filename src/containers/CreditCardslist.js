@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import CreditCard from '../presentational/CreditCard';
 import CreditCardInput from '../inputcontainers/CreditCardInput'
 import CreditCards from './CreditCards'
@@ -17,6 +17,14 @@ class CreditCardslist extends Component {
 
     return (
         <div>
+        <ul>
+          <li><Link to={`${this.props.match.url}/new`}>
+              Add a Credit Card
+            </Link></li>
+            <li><Link to={`${this.props.match.url}/getAssets`}>
+             View Your Credit Card Info
+            </Link></li>
+          </ul>
           <Switch>
             <Route path={`${this.props.match.url}/new`} component={CreditCardInput} />
             <Route path={`${this.props.match.url}/getCards`} component={CreditCards}/>
