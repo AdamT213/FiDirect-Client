@@ -1,6 +1,6 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link} from 'react-router-dom';
 import Asset from '../presentational/Asset';
 import AssetInput from '../inputcontainers/AssetInput'
 import Assets from './Assets'
@@ -15,6 +15,14 @@ class Assetlist extends Component {
 
     return (
         <div>
+        <ul>
+          <li><Link to={`${this.props.match.url}/new`}>
+              Add a New Asset
+            </Link></li>
+            <li><Link to={`${this.props.match.url}/getAssets`}>
+             View Your Assets
+            </Link></li>
+          </ul>
           <Switch>
             <Route path={`${this.props.match.url}/new`} component={AssetInput} />
             <Route path={`${this.props.match.url}/getAssets`} component={Assets}/>
