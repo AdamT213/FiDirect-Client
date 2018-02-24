@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import { addInvestment } from '../actions/investmentActions';
 import RecurringPaymentInput from './RecurringPaymentInput'
 
@@ -68,8 +68,13 @@ export class InvestmentInput extends Component {
                     </div>
                   </div>
                 </form>
-                <Router> 
-                  <Route exact path="/recurring_payments/new" component={RecurringPaymentInput} /> 
+                <Router>
+                <div>
+                <Link to={`/recurring_payments/new`}>
+                    Add Recurring Payments to/from This Acccount
+                  </Link>
+                  <Route exact path="/recurring_payments/new" component={RecurringPaymentInput} />
+                  </div>
                 </Router>
               </div>
             </div>
