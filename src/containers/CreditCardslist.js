@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import CreditCard from '../presentational/CreditCard';
 import CreditCardInput from '../inputcontainers/CreditCardInput'
 import CreditCards from './CreditCards'
@@ -16,7 +16,9 @@ class CreditCardslist extends Component {
     });
 
     return (
-        <div className= "App">
+        <div className= "App"> 
+        <Router> 
+        <div>
         <ul>
           <li><Link to={`${this.props.match.url}/new`}>
               Add a Credit Card
@@ -36,7 +38,9 @@ class CreditCardslist extends Component {
               </ul>
               </div>
             )}/>
-          </Switch>
+          </Switch> 
+          </div> 
+          </Router>
         </div>
     )
   }

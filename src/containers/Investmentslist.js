@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Investment from '../presentational/Investment';
 import InvestmentInput from '../inputcontainers/InvestmentInput'
 import Investments from './Investments'
@@ -14,7 +14,9 @@ class Investmentslist extends Component {
     });
 
     return (
-        <div className= "App">
+        <div className= "App"> 
+        <Router> 
+        <div>
         <ul>
           <li><Link to={`${this.props.match.url}/new`}>
               Add an Investment
@@ -34,7 +36,9 @@ class Investmentslist extends Component {
               </ul>
               </div>
             )}/>
-          </Switch>
+          </Switch> 
+          </div> 
+          </Router>
         </div>
     )
   }

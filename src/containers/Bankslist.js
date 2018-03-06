@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Bank from '../presentational/Bank';
 import BankInput from '../inputcontainers/BankInput'
 import Banks from './Banks'
@@ -14,7 +14,9 @@ class Bankslist extends Component {
     });
 
     return (
-        <div className= "App">
+        <div className= "App"> 
+        <Router> 
+        <div>
         <ul>
           <li><Link to={`${this.props.match.url}/new`}>
               Add a New Bank Account
@@ -34,7 +36,9 @@ class Bankslist extends Component {
               </ul>
               </div>
             )}/>
-          </Switch>
+          </Switch> 
+          </div> 
+          </Router>
         </div>
     )
   }
