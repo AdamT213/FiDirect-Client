@@ -11,7 +11,7 @@ class Investment extends Component {
         <li>Amount: {payment.pay_amount}</li><br /> <li>Duration: {payment.duration}</li><br /></div>))
         
     return( 
-    <div>
+    <div className= "App">
       <li>Name: {this.props.name}</li> 
       <li>Value: {this.props.value}</li>  
       <div>{Payments}</div>

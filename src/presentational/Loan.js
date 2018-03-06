@@ -11,7 +11,7 @@ class Loan extends Component {
         <li>Amount: {payment.pay_amount}</li><br /> <li>Duration: {payment.duration}</li><br /></div>))
         
     return( 
-    <div>
+    <div className= "App">
       <li>Name: {this.props.name}</li> 
       <li>Remaining Balance: {this.props.remaining_balance}</li>  
       <li>Interest Rate: {this.props.interest_rate}</li>

@@ -4,7 +4,7 @@ class Asset extends Component {
 
   render() {
     return( 
-    <div>
+    <div className= "App">
       <li>Name: {this.props.name}</li> 
       <li>Value: {this.props.value}</li>  
      </div>

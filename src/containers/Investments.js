@@ -15,7 +15,7 @@ export class Investments extends Component {
 
   render() {
     return (
-      <div>
+      <div className= "App">
         <hr />
         <div className="row justify-content-center">
           <h2>Investments</h2>

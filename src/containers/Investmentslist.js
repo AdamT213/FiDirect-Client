@@ -14,7 +14,7 @@ class Investmentslist extends Component {
     });
 
     return (
-        <div>
+        <div className= "App">
         <ul>
           <li><Link to={`${this.props.match.url}/new`}>
               Add an Investment

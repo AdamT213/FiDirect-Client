@@ -40,7 +40,8 @@ export class RecurringPaymentInput extends Component {
   }
 
   render() {
-    return (
+    return ( 
+      <div className= "App">
       <div className="container">
         <div className="row">
           <div className="col-md-8 col-md-offset-2">
@@ -128,6 +129,7 @@ export class RecurringPaymentInput extends Component {
             </div>
           </div>
         </div>
+      </div> 
       </div>
     );
   }

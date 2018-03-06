@@ -11,7 +11,7 @@ class Bank extends Component {
         <li>Amount: {payment.pay_amount}</li><br /> <li>Duration: {payment.duration}</li><br /></div>))
         
     return( 
-    <div>
+    <div className= "App">
       <li>Name: {this.props.name}</li> 
       <li>Balance: {this.props.balance}</li>  
       <div>{Payments}</div>
