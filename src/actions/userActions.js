@@ -4,7 +4,7 @@ export function signUpUser(user){
     var data = {email: user.email, password: user.password, password_confirmation: user.password};
     return function(dispatch){
         dispatch({type: 'SIGN_UP_USER'})
-        return fetch('https://fidirect-api.herokuapp.com/api/users/signup', {
+        return fetch('https://fidirect-api.herokuapp.com/api/users/sign_up', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
