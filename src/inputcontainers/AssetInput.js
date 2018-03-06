@@ -39,7 +39,7 @@ export class AssetInput extends Component {
               <div className="panel-body">
                 <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
                   <div className="form-group">
-                    <label htmlFor="name" className="col-md-4 control-label">Loan Account Name</label>
+                    <label htmlFor="name" className="col-md-4 control-label">Asset Name</label>
                     <div className="col-md-5">
                       <input
                         className="form-control"
@@ -63,7 +63,7 @@ export class AssetInput extends Component {
                   </div>
                   <div className="form-group">
                     <div className="col-md-6 col-md-offset-4">
-                      <button type="submit" className="btn btn-default">Add Loan</button>
+                      <button type="submit" className="btn btn-default">Add Asset</button>
                     </div>
                   </div>
                 </form>
