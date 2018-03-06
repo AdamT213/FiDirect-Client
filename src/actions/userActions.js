@@ -11,10 +11,12 @@ export function signUpUser(user){
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({user: data}),
-        }).then(res => console.log(res))
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
-    }
+        }).then(res => {
+            return res.json()
+          }).then(responseJson => {
+            dispatch({type: 'CREATE_SESSION', payload: responseJson})
+    }) 
+}
 }
 
 export function signInUser(user){
@@ -28,8 +30,11 @@ export function signInUser(user){
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({user: data}),
-        }).then(res => console.log(res))
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
-    }
+        }).then(res => {
+            return res.json()
+          }).then(responseJson => {
+            dispatch({type: 'CREATE_SESSION', payload: responseJson})
+    })
 }
+}  
+

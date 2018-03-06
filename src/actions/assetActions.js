@@ -19,13 +19,13 @@ export function addAsset(asset){
 
 
 export function getAssets(){ 
-   return function(dispatch){
+   return function(dispatch, getState){
     dispatch({type: 'LOADING_ASSETS'})
     return fetch('https://fidirect-api.herokuapp.com/api/assets')
       .then(res => {
         return res.json()
       }).then(responseJson => {
-        dispatch({type: 'GET_ASSETS', payload: responseJson})
+        dispatch({type: 'GET_ASSETS', payload: [responseJson,  getState()]})
     })
   }
 }

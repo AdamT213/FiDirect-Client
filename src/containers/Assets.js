@@ -27,8 +27,9 @@ export class Assets extends Component {
             <button
             className="get"
             name="assets"
-            onClick={this.handleOnClick}
-            />
+            onClick={this.handleOnClick}> 
+            See Your Assets
+            </button>
             </div>
           </div>
         </div>
