@@ -18,13 +18,13 @@ export function addInvestment(investment){
 } 
 
 export function getInvestments(){ 
-   return function(dispatch){
+   return function(dispatch, getState){
     dispatch({type: 'LOADING_INVESTMENTS'})
     return fetch('https://fidirect-api.herokuapp.com/api/investments')
       .then(res => {
         return res.json()
       }).then(responseJson => {
-        dispatch({type: 'GET_INVESTMENTS', payload: responseJson})
+        dispatch({type: 'GET_INVESTMENTS', payload: [responseJson, getState()]})
     })
   }
 }

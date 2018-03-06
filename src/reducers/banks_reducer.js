@@ -6,7 +6,7 @@ export function banksReducer(state = {loading: false, bank: {}, banks: []}, acti
     case 'LOADING_ BANKS':
       return Object.assign({}, state, {loading: true});
      case 'GET_BANKS':
-      return {loading: false, banks: action.payload.filter((bank => bank.id === state.user_id))};
+      return {loading: false, banks: action.payload.filter((bank => bank.id === action.payload[1].usersReducer.user_id))};
     default:
       return state;
   }

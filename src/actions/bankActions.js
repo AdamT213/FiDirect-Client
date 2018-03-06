@@ -18,13 +18,13 @@ export function addBankAccount(account){
 }
 
 export function getBanks(){ 
-   return function(dispatch){
+   return function(dispatch, getState){
     dispatch({type: 'LOADING_BANKS'})
     return fetch('https://fidirect-api.herokuapp.com/api/bank_accounts')
       .then(res => {
         return res.json()
       }).then(responseJson => {
-        dispatch({type: 'GET_BANKS', payload: responseJson})
+        dispatch({type: 'GET_BANKS', payload: [responseJson,getState()]})
     })
   }
 }

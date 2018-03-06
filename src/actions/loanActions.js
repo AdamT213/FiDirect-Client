@@ -18,13 +18,13 @@ export function addLoan(loan){
 } 
 
 export function getLoans(){ 
-   return function(dispatch){
+   return function(dispatch, getState){
     dispatch({type: 'LOADING_LOANS'})
     return fetch('https://fidirect-api.herokuapp.com/api/loans')
       .then(res => {
         return res.json()
       }).then(responseJson => {
-        dispatch({type: 'GET_LOANS', payload: responseJson})
+        dispatch({type: 'GET_LOANS', payload: [responseJson, getState()]})
     })
   }
 }
