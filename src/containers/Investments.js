@@ -28,7 +28,7 @@ export class Investments extends Component {
             className="get"
             name="cards"
             onClick={this.handleOnClick}
-            />
+            >See Your Investments</button>
             </div>
           </div>
         </div>

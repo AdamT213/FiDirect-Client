@@ -28,7 +28,7 @@ export class Banks extends Component {
             className="get"
             name="banks"
             onClick={this.handleOnClick}
-            />
+            >See Your Bank Accounts</button>
             </div>
           </div>
         </div>

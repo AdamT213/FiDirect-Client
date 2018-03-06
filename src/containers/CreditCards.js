@@ -28,7 +28,7 @@ export class Cards extends Component {
             className="get"
             name="cards"
             onClick={this.handleOnClick}
-            />
+            >See Your Credit Cards</button>
             </div>
           </div>
         </div>
