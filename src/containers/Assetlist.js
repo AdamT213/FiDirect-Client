@@ -8,6 +8,7 @@ import Assets from './Assets'
 class Assetlist extends Component {
 
   render() {
+    debugger;
 
     const assets = this.props.assets.map((asset, index) => {
       return <Asset name={asset.name} value= {asset.value} key={index} />

@@ -6,7 +6,8 @@ export function cardsReducer(state = {loading: false, card: {}, cards: []}, acti
       interest_rate: action.interest_rate }})
     case 'LOADING_ CARDS':
       return Object.assign({}, state, {loading: true});
-     case 'GET_CARDS':
+     case 'GET_CARDS': 
+      debugger;
       return {loading: false, cards: action.payload.filter((card => card.user_id === action.payload[1].usersReducer.user_id))};
     default:
       return state
