@@ -6,7 +6,7 @@ class Asset extends Component {
     return( 
     <div className= "App">
       <li>Name: {this.props.name}</li> 
-      <li>Value: {this.props.value}</li>  
+      <li>Value: ${this.props.value}</li>  
      </div>
     );
   }

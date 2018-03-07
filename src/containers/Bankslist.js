@@ -10,7 +10,7 @@ class Bankslist extends Component {
   render() {
 
     const banks = this.props.banks.map((account, index) => {
-      return <Bank name={account.name} balance= {account.balance} payments= {account.Payments} key={index} />
+      return <Bank name={account.name} balance={account.balance} payments={account.Payments} key={index} />
     });
 
     return (

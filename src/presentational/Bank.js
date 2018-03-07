@@ -9,7 +9,7 @@ class Bank extends Component {
     return( 
     <div className= "App">
       <li>Name: {this.props.name}</li> 
-      <li>Balance: {this.props.balance}</li>  
+      <li>Balance: ${this.props.balance}</li>  
      </div>
     );
   }

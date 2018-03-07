@@ -8,8 +8,8 @@ class CreditCard extends Component {
       return( 
       <div className= "App">
         <li>Name: {this.props.provider}</li> 
-        <li>Balance: {this.props.balance}</li>  
-        <li>Interest Rate: {this.props.interest_rate}</li> 
+        <li>Balance: ${this.props.balance}</li>  
+        <li>Interest Rate: {this.props.interest}</li> 
       </div>
       ); 
     }
