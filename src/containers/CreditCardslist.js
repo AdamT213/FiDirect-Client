@@ -46,7 +46,8 @@ class CreditCardslist extends Component {
   }
 };
 
-function mapStateToProps(state){
+function mapStateToProps(state){ 
+  debugger;
   return {cards: state.cardsReducer.cards}
 }
 

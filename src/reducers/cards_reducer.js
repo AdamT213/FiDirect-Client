@@ -7,8 +7,9 @@ export function cardsReducer(state = {loading: false, card: {}, cards: []}, acti
     case 'LOADING_ CARDS':
       return Object.assign({}, state, {loading: true});
      case 'GET_CARDS': 
+     let userCards = action.payload[0].filter((card => card.user_id === action.payload[1].usersReducer.user_id))
       debugger;
-      return {loading: false, cards: action.payload.filter((card => card.user_id === action.payload[1].usersReducer.user_id))};
+      return {loading: false, cards: userCards.map((card => state.cards.push(card)))};
     default:
       return state
   }
