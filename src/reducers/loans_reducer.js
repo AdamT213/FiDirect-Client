@@ -6,8 +6,9 @@ export function loansReducer(state = {loading: false, loan: {}, loans: []}, acti
       interest_rate: action.interest_rate }}) 
     case 'LOADING_LOANS':
       return Object.assign({}, state, {loading: true});
-    case 'GET_LOANS':
-      return {loading: false, loans: action.payload.filter((loan => loan.id === action.payload[1].usersReducer.user_id))};
+    case 'GET_LOANS': 
+    let userLoans =  action.payload[0].filter((loan => loan.id === action.payload[1].usersReducer.user_id))
+      return {loading: false, loans: userLoans};
     default:
       return state
   }

@@ -25,15 +25,15 @@ class Bankslist extends Component {
              View Your Bank Account Info
             </Link></li>
           </ul>
+          <ul>
+            {banks}
+          </ul>
           <Switch>
             <Route path={`${this.props.match.url}/new`} component={BankInput} />
             <Route path={`${this.props.match.url}/getBanks`} component={Banks}/>
             <Route exact path={this.props.match.url} render={() => (
               <div>
               <h3>Here are all of your Bank Accounts</h3>
-              <ul>
-                {banks}
-              </ul>
               </div>
             )}/>
           </Switch> 
