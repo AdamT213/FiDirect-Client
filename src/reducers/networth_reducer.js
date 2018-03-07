@@ -12,7 +12,7 @@ export function networthReducer(state = {networth: 0}, action) {
         let investmentsvalue = 0; 
         action.payload.investmentsReducer.investments.map((investment) => investmentsvalue += investment.value) 
         let loansbalance = 0; 
-        action.payload.loansReducer.loans.map((loan) => loansbalance -= loan.remaining_balance) 
+        action.payload.loansReducer.loans.map((loan) => loansbalance += loan.remaining_balance) 
         let totalvalue = assetsvalue + banksbalance - cardsbalance + investmentsvalue - loansbalance 
       return Object.assign({}, state, {networth: totalvalue})
     default:
