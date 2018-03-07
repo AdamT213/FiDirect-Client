@@ -18,7 +18,6 @@ export function addCreditCard(account){
 }
 
 export function getCards(){ 
-  debugger;
    return function(dispatch, getState){
     dispatch({type: 'LOADING_CARDS'})
     return fetch('https://fidirect-api.herokuapp.com/api/credit_cards')
