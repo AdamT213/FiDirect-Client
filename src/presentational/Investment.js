@@ -18,6 +18,10 @@ class Investment extends Component {
      </div>
     );
   }
-};
+}; 
 
-export default Investment;
+function mapStateToProps(state){ 
+  return {recurring_payments: state.investmentsReducer.investments.recurring_payments}
+}
+
+export default connect(mapStateToProps)(Investment);

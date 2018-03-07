@@ -19,5 +19,8 @@ class Bank extends Component {
     );
   }
 };
+function mapStateToProps(state){ 
+  return {recurring_payments: state.banksReducer.banks.recurring_payments}
+}
 
-export default Bank;
+export default connect(mapStateToProps)(Bank);

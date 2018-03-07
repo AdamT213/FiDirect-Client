@@ -19,6 +19,10 @@ class Loan extends Component {
      </div>
     );
   }
-};
+}; 
 
-export default Loan;
+function mapStateToProps(state){ 
+  return {recurring_payments: state.loansReducer.loans.recurring_payments}
+}
+
+export default connect(mapStateToProps)(Loan);
