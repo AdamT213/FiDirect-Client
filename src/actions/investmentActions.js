@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch'
 
 export function addInvestment(investment){
     var data = {name: investment.name, value: investment.value};
-    return function(dispatch){
+    return function(dispatch, getState){
         dispatch({type: 'ADD_INVESTMENT'})
         return fetch('https://fidirect-api.herokuapp.com/api/investments', {
         method: 'POST',
@@ -11,10 +11,12 @@ export function addInvestment(investment){
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data),
-        }).then(res => res.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
-    }
+        }).then(res => {
+          return res.json()
+        }).then(responseJson => {
+          dispatch({type: 'CREATE_INVESTMENT', payload: [responseJson, getState()]})
+        }) 
+      }
 } 
 
 export function getInvestments(){ 
