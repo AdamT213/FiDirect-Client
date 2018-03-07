@@ -25,17 +25,15 @@ class Investmentslist extends Component {
              View Your Investment Info
             </Link></li>
           </ul>
+          <div>
+            <h3>Here are all of your Investments</h3>
+          </div>
           <ul>
             {investments}
           </ul>
           <Switch>
             <Route path={`${this.props.match.url}/new`} component={InvestmentInput} />
             <Route path={`${this.props.match.url}/getInvestments`} component={Investments}/>
-            <Route exact path={this.props.match.url} render={() => (
-            <div>
-              <h3>Here are all of your Investments</h3>
-              </div>
-            )}/>
           </Switch> 
           </div> 
           </Router>

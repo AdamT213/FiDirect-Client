@@ -25,17 +25,15 @@ class Loanslist extends Component {
              View Your Loan Info
             </Link></li>
           </ul>
+          <div>
+            <h3>Here are all of your Loans</h3>
+          </div>
           <ul>
             {loans}
           </ul>
           <Switch>
             <Route path={`${this.props.match.url}/new`} component={LoanInput} />
             <Route path={`${this.props.match.url}/getInvestments`} component={Loans}/>
-            <Route exact path={this.props.match.url} render={() => (
-            <div>
-              <h3>Here are all of your Loans</h3>
-              </div>
-            )}/>
           </Switch> 
           </div>
           </Router> 

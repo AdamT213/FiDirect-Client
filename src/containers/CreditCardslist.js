@@ -27,17 +27,15 @@ class CreditCardslist extends Component {
              View Your Credit Card Info
             </Link></li>
           </ul>
+          <div>
+            <h3>Here are all of your Credit Cards</h3>
+          </div>
           <ul>
             {cards}
           </ul>
           <Switch>
             <Route path={`${this.props.match.url}/new`} component={CreditCardInput} />
             <Route path={`${this.props.match.url}/getCards`} component={CreditCards}/>
-            <Route exact path={this.props.match.url} render={() => (
-              <div>
-              <h3>Here are all of your Credit Cards</h3>
-              </div>
-            )}/>
           </Switch> 
           </div> 
           </Router>
