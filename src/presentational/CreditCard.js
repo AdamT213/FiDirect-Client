@@ -14,6 +14,5 @@ class CreditCard extends Component {
       ); 
     }
   }
-}; 
 
 export default CreditCard;

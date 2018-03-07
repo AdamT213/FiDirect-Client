@@ -9,16 +9,19 @@ class NetWorth extends Component {
   }
 
   render() {
-    return (
-      <h2 className= "App">Your current net worth is ${this.props.calculateNetWorth()}</h2>
+    return ( 
+      <div className= "App">
+      <h2>Your current net worth is ${this.props.networth}</h2><br />
+      <h2> To see an updated net worth, find your financial info, or add some!</h2> 
+      </div>
     )
   }
 };
 
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { 
   return {
-    networth: state.networth
+    networth: state.networthReducer.networth
   };
 }
 
