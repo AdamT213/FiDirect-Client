@@ -10,13 +10,25 @@ export function signUpUser(user){
           Accept: 'application/json',
           'Content-Type': 'application/json'
         },
-        }).then(res => {
-            return res.json()
-          }).then(responseJson => {
-            dispatch({type: 'CREATE_SESSION', payload: responseJson})
-    }) 
+        }).then(res => { return function(dispatch){
+          dispatch({type: 'SIGN_IN_USER', payload: user})
+          return fetch('https://fidirect-api.herokuapp.com/api/users/sign_in', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({user: data}),
+          }).then(res => {
+              return res.json()
+            }).then(responseJson => {
+              dispatch({type: 'CREATE_SESSION', payload: responseJson})
+      })
+  } 
+  })
+    } 
 }
-}
+
 
 export function signInUser(user){
     var data = {email: user.email, password: user.password, remember_me: user.id};
