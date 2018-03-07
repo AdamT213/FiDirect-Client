@@ -9,7 +9,8 @@ import CreditCards from './CreditCards'
 class CreditCardslist extends Component {
 
 
-  render() {
+  render() { 
+    debugger;
 
     const cards = this.props.cards.map((card, index) => {
       return <CreditCard provider={card.provider} balance= {card.balance} interest= {card.interest_rate} payments= {card.Payments} key={index} />
