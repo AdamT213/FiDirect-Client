@@ -61,7 +61,6 @@ export class LoanInput extends Component {
                     <div className="col-md-5">
                       <input
                         className="form-control"
-                        type="text"
                         name="balance"
                         value={this.state.remaining_balance}
                         onChange={this.handleOnChange}
@@ -73,7 +72,6 @@ export class LoanInput extends Component {
                     <div className="col-md-5">
                       <input
                         className="form-control"
-                        type="text"
                         name="balance"
                         value={this.state.interest_rate}
                         onChange={this.handleOnChange}
