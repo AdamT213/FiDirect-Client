@@ -10,14 +10,16 @@ export class BankInput extends Component {
     super(props)
     this.state = {
       name: '',
-      balance: '',
+      balance: '', 
+      user_id: '',
     }
   }
 
   handleOnChange = event => {
     const { value, name } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
+      user_id: this.props.user_id
     });
   }
 
@@ -27,7 +29,8 @@ export class BankInput extends Component {
     this.props.addBankAccount(account);
     this.setState({
       name: '',
-      balance: '',
+      balance: '', 
+      user_id: '',
     });
   }
 
@@ -82,4 +85,8 @@ export class BankInput extends Component {
   }
 }
 
-export default connect(null, { addBankAccount })(BankInput);
+function mapStateToProps(state){ 
+  return {user_id: state.usersReducer.user_id}
+}
+
+export default connect(mapStateToProps, { addBankAccount })(BankInput);

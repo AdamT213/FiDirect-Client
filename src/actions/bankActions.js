@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 export function addBankAccount(account){
-    var data = {name: account.name, balance: account.balance};
+    var data = {name: account.name, balance: account.balance, user_id: account.user_id};
     return function(dispatch, getState){
         dispatch({type: 'ADD_BANK_ACCOUNT'})
         return fetch('https://fidirect-api.herokuapp.com/api/bank_accounts', {

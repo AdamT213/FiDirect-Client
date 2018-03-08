@@ -11,14 +11,16 @@ export class LoanInput extends Component {
     this.state = {
       name: '',
       remaining_balance: '',
-      interest_rate: '',
+      interest_rate: '', 
+      user_id: '',
     }
   }
 
   handleOnChange = event => {
     const { value, name } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
+      user_id: this.props.user_id
     });
   }
 
@@ -29,7 +31,8 @@ export class LoanInput extends Component {
     this.setState({
       name: '',
       remaining_balance: '',
-      interest_rate: '',
+      interest_rate: '', 
+      user_id: '',
     });
   }
 
@@ -99,6 +102,10 @@ export class LoanInput extends Component {
       </div>
     );
   }
+} 
+
+function mapStateToProps(state){ 
+  return {user_id: state.usersReducer.user_id}
 }
 
-export default connect(null, { addLoan })(LoanInput);
+export default connect(mapStateToProps, { addLoan })(LoanInput);

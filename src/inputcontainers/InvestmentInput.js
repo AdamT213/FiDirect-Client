@@ -10,14 +10,16 @@ export class InvestmentInput extends Component {
     super(props)
     this.state = {
       name: '',
-      value: '',
+      value: '', 
+      user_id: '',
     }
   }
 
   handleOnChange = event => {
     const { value, name } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
+      user_id: this.props.user_id
     });
   }
 
@@ -87,4 +89,8 @@ export class InvestmentInput extends Component {
   }
 }
 
-export default connect(null, { addInvestment })(InvestmentInput);
+function mapStateToProps(state){ 
+  return {user_id: state.usersReducer.user_id}
+}
+
+export default connect(mapStateToProps, { addInvestment })(InvestmentInput);

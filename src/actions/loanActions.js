@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 export function addLoan(loan){
-    var data = {name: loan.name, remaining_balance: loan.remaining_balance};
+    var data = {name: loan.name, remaining_balance: loan.remaining_balance, user_id: loan.user_id};
     return function(dispatch){
         dispatch({type: 'ADD_LOAN'})
         return fetch('https://fidirect-api.herokuapp.com/api/loans', {
