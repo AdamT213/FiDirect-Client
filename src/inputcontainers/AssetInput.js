@@ -8,14 +8,16 @@ export class AssetInput extends Component {
     super(props)
     this.state = {
       name: '',
-      value: '',
+      value: '', 
+      user_id: '',
     }
   }
 
   handleOnChange = event => {
     const { value, name } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
+      user_id: this.props.user_id
     });
   }
 
@@ -25,7 +27,8 @@ export class AssetInput extends Component {
     this.props.addAsset(asset);
     this.setState({
       name: '',
-      value: '',
+      value: '', 
+      user_id: '',
     });
   }
 
@@ -75,6 +78,11 @@ export class AssetInput extends Component {
       </div>
     );
   }
+} 
+
+
+function mapStateToProps(state){ 
+  return {user_id: state.usersReducer.user_id}
 }
 
-export default connect(null, { addAsset })(AssetInput);
+export default connect(mapStateToProps, { addAsset })(AssetInput);

@@ -45,7 +45,6 @@ class App extends Component {
                 <Route exact path="/credit_cards" component={CreditCardslist} />
                 <Route exact path="/investments" component={Investmentslist} />
                 <Route exact path="/loans" component={Loanslist} /> 
-                <Route exact path="/recurring_payments/new" component={RecurringPaymentInput} /> 
               </div>
           </Router>
           </header>

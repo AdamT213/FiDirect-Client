@@ -28,10 +28,6 @@ const NavBar = () => {
       to="/loans"
       exact
     >Loans</NavLink>
-    <NavLink className="link"
-      to="/recurring_payments/new"
-      exact
-    >Add Incoming/Outgoing Payments Related to this Account</NavLink>
     </div>
   );
 };

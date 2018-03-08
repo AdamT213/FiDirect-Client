@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 export function addAsset(asset){
-    var data = {name: asset.name, value: asset.value};
+    var data = {name: asset.name, value: asset.value, user_id: asset.user_id};
     return function(dispatch){
         dispatch({type: 'ADD_ASSET'})
         return fetch('https://fidirect-api.herokuapp.com/api/assets', {
@@ -14,8 +14,10 @@ export function addAsset(asset){
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
-    }
+    } 
 } 
+
+
 
 
 export function getAssets(){ 
