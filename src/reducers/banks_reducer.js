@@ -2,7 +2,7 @@ export function banksReducer(state = {loading: false, bank: {}, banks: []}, acti
   switch (action.type) {
 
     case 'ADD_BANK_ACCOUNT':
-      return Object.assign({}, state, {bank: {name: action.name, balance: action.balance }})
+      return Object.assign({}, state, {bank: {name: action.name, balance: action.balance}})
     case 'LOADING_ BANKS':
       return Object.assign({}, state, {loading: true});
      case 'GET_BANKS': 

@@ -57,11 +57,11 @@ export class LoanInput extends Component {
                     </div>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="remaining_balance" className="col-md-4 control-label"> Remaining Balance</label>
+                    <label htmlFor="remaining_balance" className="col-md-4 control-label">Remaining Balance</label>
                     <div className="col-md-5">
                       <input
                         className="form-control"
-                        name="balance"
+                        name="remaining_balance"
                         value={this.state.remaining_balance}
                         onChange={this.handleOnChange}
                       />
@@ -72,7 +72,7 @@ export class LoanInput extends Component {
                     <div className="col-md-5">
                       <input
                         className="form-control"
-                        name="balance"
+                        name="interest_rate"
                         value={this.state.interest_rate}
                         onChange={this.handleOnChange}
                       />

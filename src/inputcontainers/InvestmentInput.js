@@ -29,7 +29,8 @@ export class InvestmentInput extends Component {
     this.props.addInvestment(investment);
     this.setState({
       name: '',
-      value: '',
+      value: '', 
+      user_id: '',
     });
   }
 
