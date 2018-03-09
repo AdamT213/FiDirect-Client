@@ -32,11 +32,9 @@ export function getInvestments(){
 } 
 
 export function updateCounter(investment){ 
-  debugger;
   var data = {name: investment[0].name, value: investment[0].value, user_id: investment[0].user_id, likes: investment[0].likes + 1, id: investment[0].id};
   return function(dispatch, getState) { 
     dispatch({type: 'UPDATE_COUNTER'}) 
-    debugger;
     return fetch(`https://fidirect-api.herokuapp.com/api/investments/${data.id}`, { 
       method: 'PATCH',
       headers: {
@@ -44,11 +42,9 @@ export function updateCounter(investment){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data),
-      }).then(res => {
-        return res.json()
-      }).then(responseJson => {
-        dispatch({type: 'UPDATE_INVESTMENT', payload: [responseJson, getState()]})
-      }) 
-    }
-} 
+      }).then(res => { 
+        console.log(res)
+    }) 
+  }
+}
    
