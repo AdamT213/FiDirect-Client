@@ -1,9 +1,9 @@
 export function cardsReducer(state = {loading: false, card: {}, cards: []}, action) {
   switch (action.type) {
 
-    case 'ADD_CREDIT_CARD':
-      return Object.assign({}, state, {card: {provider: action.provider, balance: action.balance,
-      interest_rate: action.interest_rate }})
+    case 'ADD_CREDIT_CARD': 
+      debugger;
+      return Object.assign({}, state, {cards: state.cards.concat(action.payload) })
     case 'LOADING_ CARDS':
       return Object.assign({}, state, {loading: true});
      case 'GET_CARDS': 

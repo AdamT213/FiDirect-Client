@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch'
 export function addCreditCard(account){
     var data = {provider: account.provider, balance: account.balance, interest_rate: account.interest_rate, user_id: account.user_id};
     return function(dispatch){
-        dispatch({type: 'ADD_CREDIT_CARD'})
+        
         return fetch('https://fidirect-api.herokuapp.com/api/credit_cards', {
         method: 'POST',
         headers: {
@@ -13,7 +13,7 @@ export function addCreditCard(account){
         body: JSON.stringify(data),
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
+        .then(response => dispatch({type: 'ADD_CREDIT_CARD', payload: response}));
     }
 }
 
