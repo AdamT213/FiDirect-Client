@@ -10,7 +10,7 @@ class Investmentslist extends Component {
   render() {
 
     const investments = this.props.investments.map((investment, index) => {
-      return <Investment name={investment.name} value={investment.value} payments={investment.Payments} key={index} />
+      return <Investment name={investment.name} value={investment.value} payments={investment.Payments} likes={investment.likes} id= {investment.id} key={index} />
     });
 
     return (

@@ -29,4 +29,23 @@ export function getInvestments(){
         dispatch({type: 'GET_INVESTMENTS', payload: [responseJson, getState()]})
     })
   }
-}
+} 
+
+export function updateCounter(){ 
+  return function(dispatch) { 
+    dispatch({type: 'UPDATE_COUNTER'}) 
+    return fetch(`https://fidirect-api.herokuapp.com/api/investments/${investment.id}`, { 
+      method: 'PATCH',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+      }).then(res => {
+        return res.json()
+      }).then(responseJson => {
+        dispatch({type: 'UPDATE_INVESTMENT', payload: responseJson})
+      }) 
+    }
+} 
+   

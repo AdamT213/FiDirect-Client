@@ -7,7 +7,10 @@ export function investmentsReducer(state = {loading: false, investment: {}, inve
       return Object.assign({}, state, {loading: true});
     case 'GET_INVESTMENTS': 
     let userInvestments = action.payload[0].filter((investment => investment.user_id === action.payload[1].usersReducer.user_id))
-      return {loading: false, investments: userInvestments};
+      return {loading: false, investments: userInvestments}; 
+    case 'UPDATE_INVESTMENT': 
+    let investment= state.investments.filter((investment => investment.id === action.id )) 
+    investment.likes += 1;
     default:
       return state
   }
