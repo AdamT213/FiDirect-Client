@@ -8,6 +8,8 @@ export function investmentsReducer(state = {loading: false, investment: {}, inve
     case 'GET_INVESTMENTS': 
     let userInvestments = action.payload[0].filter((investment => investment.user_id === action.payload[1].usersReducer.user_id))
       return {loading: false, investments: userInvestments};  
+    case 'UPDATE_COUNTER': 
+      return {investments: state.investments}
     default:
       return state
   }
