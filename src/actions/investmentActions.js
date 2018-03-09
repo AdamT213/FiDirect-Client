@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 export function addInvestment(investment){
-    var data = {name: investment.name, value: investment.value, user_id: investment.user_id};
+    var data = {name: investment.name, value: investment.value, user_id: investment.user_id, likes: investment.likes};
     return function(dispatch, getState){
         dispatch({type: 'ADD_INVESTMENT'})
         return fetch('https://fidirect-api.herokuapp.com/api/investments', {
@@ -31,10 +31,13 @@ export function getInvestments(){
   }
 } 
 
-export function updateCounter(){ 
+export function updateCounter(investment){ 
+  debugger;
+  var data = {name: investment[0].name, value: investment[0].value, user_id: investment[0].user_id, likes: investment[0].likes, id: investment[0].id};
   return function(dispatch) { 
     dispatch({type: 'UPDATE_COUNTER'}) 
-    return fetch(`https://fidirect-api.herokuapp.com/api/investments/${investment.id}`, { 
+    debugger;
+    return fetch(`https://fidirect-api.herokuapp.com/api/investments/${data.id}`, { 
       method: 'PATCH',
       headers: {
         Accept: 'application/json',

@@ -1,23 +1,18 @@
 import React, { Component } from 'react';  
 import { connect } from 'react-redux'
+import { updateCounter } from '../actions/investmentActions';
 
 class Investment extends Component {  
-  // constructor(props) {
-  //   super(props)
-  //   this.state = { 
-  //     counter: 0, 
-  //   } 
+  debugger;
   
-  // }
-
-
   handleClick = () =>  { 
-    this.props.updateCounter();
+    let investment = this.props.investments.filter((investment => 
+    investment.id === this.props.id));
+    this.props.updateCounter(investment);
   }
 
 
-  render() {
-        
+  render() {    
     return( 
     <div className= "App">
       <li>Name: {this.props.name}</li>  
@@ -28,6 +23,10 @@ class Investment extends Component {
      </div>
     );
   }
-}; 
+};  
 
-export default connect(null, { updateCounter })(Investment);
+function mapStateToProps(state){ 
+  return {investments: state.investmentsReducer.investments}
+}
+
+export default connect(mapStateToProps, { updateCounter })(Investment);

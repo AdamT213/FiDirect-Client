@@ -8,7 +8,7 @@ import Investments from './Investments'
 class Investmentslist extends Component {
 
   render() {
-
+    debugger;
     const investments = this.props.investments.map((investment, index) => {
       return <Investment name={investment.name} value={investment.value} payments={investment.Payments} likes={investment.likes} id= {investment.id} key={index} />
     });
